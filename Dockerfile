@@ -6,14 +6,14 @@
 ###################################
 
 # Pull base image.
-FROM python:2.7
+FROM python:3.9
 
-RUN git clone https://github.com/qn7o/jinja2-live-parser.git /data
+RUN git clone https://github.com/lakshayarora476/jinja2-live-parser.git /data
 
 WORKDIR /data
 
 # Install dependencies
-RUN pip install -r requirements.txt
+RUN pip3 install -r requirements.txt
 
 # Change bind host
 RUN sed -i 's/host=config.HOST/host="0.0.0.0"/g' parser.py
